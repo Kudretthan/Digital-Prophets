@@ -1,0 +1,52 @@
+version: "3.9"
+
+services:
+  db:
+    image: mysql:8.0
+    container_name: stellar_mysql
+    restart: unless-stopped
+    environment:
+      MYSQL_ROOT_PASSWORD: rootpass
+      MYSQL_DATABASE: stellar_db
+      MYSQL_USER: stellar
+      MYSQL_PASSWORD: stellarpass
+    ports:
+      - "3307:3306"      # Host:3307 -> Container:3306 (çakışmasın diye)
+    volumes:
+      - db_data:/var/lib/mysql
+
+  phpmyadmin:
+    image: phpmyadmin/phpmyadmin:latest
+    container_name: stellar_phpmyadmin
+    restart: unless-stopped
+    environment:
+      PMA_HOST: db
+      PMA_USER: root
+      PMA_PASSWORD: rootpass
+      UPLOAD_LIMIT: 100M
+    ports:
+      - "8080:80"        # http://localhost:8080
+    depends_on:
+      - db
+
+  backend:
+    build:
+      context: ./backend
+      dockerfile: Dockerfile
+    container_name: stellar_backend
+    restart: unless-stopped
+    environment:
+      DB_HOST: db
+      DB_PORT: 3306
+      DB_USER: stellar
+      DB_PASSWORD: stellarpass
+      DB_NAME: stellar_db
+    volumes:
+      - ./backend/app:/app/app   # Hot reload için kodu içeriye bağlıyoruz
+    ports:
+      - "8000:8000"              # http://localhost:8000
+    depends_on:
+      - db
+
+volumes:
+  db_data:

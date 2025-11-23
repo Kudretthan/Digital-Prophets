@@ -1,0 +1,16 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* İsteğe bağlı: Kaydırma çubuğunu (Scrollbar) özelleştir */
+::-webkit-scrollbar {
+  width: 8px;
+  background: #050505;
+}
+::-webkit-scrollbar-thumb {
+  background: #1a1a1a;
+  border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #00FF41; /* Neon Yeşil */
+}
