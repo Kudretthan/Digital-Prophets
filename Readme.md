@@ -44,14 +44,16 @@ This is the core logic that lives on the Stellar network. It manages the money a
 | **Blockchain** | **Soroban (Rust)** | Smart Contract Logic and Core Betting Engine. |
 | **Web** | **Next.js** | Front-end framework. |
 | **Styling** | **Tailwind CSS** | Utility-first styling for "cyber" theme. |
-
-👥 Team
-
-Team Name: DUO LEVELİNG
-Members:
-Kudrethan ÖZBUDAK – kudrethanozbudak@gmail.com
-Bedirhan ÇİFTÇİ – esdbedirhan@outlook.com    
 | **Wallet** | **Freighter** | Stellar/Soroban wallet connection. |
 | **SDK** | **`@stellar/stellar-sdk`** | Preparing and submitting Soroban transactions. |
 | **Database** | **Supabase** | Storing off-chain user profiles and bet history. |
 
+👥 Team
+
+Team Name: DUO LEVELİNG
+
+Members:
+
+Kudrethan ÖZBUDAK – kudrethanozbudak@gmail.com
+
+Bedirhan ÇİFTÇİ – esdbedirhan@outlook.com
