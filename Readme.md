@@ -50,7 +50,8 @@ This is the core logic that lives on the Stellar network. It manages the money a
 Team Name: DUO LEVELİNG
 Members:
 Kudrethan ÖZBUDAK – kudrethanozbudak@gmail.com
-Bedirhan ÇİFTÇİ – esdbedirhan@outlook.com
+Bedirhan ÇİFTÇİ – esdbedirhan@outlook.com    
 | **Wallet** | **Freighter** | Stellar/Soroban wallet connection. |
 | **SDK** | **`@stellar/stellar-sdk`** | Preparing and submitting Soroban transactions. |
 | **Database** | **Supabase** | Storing off-chain user profiles and bet history. |
+
